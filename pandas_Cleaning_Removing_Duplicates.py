@@ -1,6 +1,6 @@
 #   python3 pandas_Read_CSV.py
 """
-python3 pandas_Cleaning_Cleaning_Data_of_Wrong_Format.py
+python3 pandas_Cleaning_Removing_Duplicates.py
 """
 
 import pandas as pd
@@ -10,15 +10,22 @@ print("************************************")
 
 df = pd.read_csv('data4.csv')
 
-df['Date'] = pd.to_datetime(df['Date'])
-
-print(df.to_string())
-
-print("---------------------------------------------------")
+print(df.duplicated())
 
 
 
 print("---------------------------------------------------")
+
+df = pd.read_csv('data4.csv')
+
+df.drop_duplicates(inplace = True)
+
+print(df.duplicated())
+
+
+print("---------------------------------------------------")
+
+
 
 """
 x = ["apple", "banana", "cherry"] 	list 	

@@ -1,6 +1,6 @@
 #   python3 pandas_Read_CSV.py
 """
-python3 pandas_Cleaning_Cleaning_Data_of_Wrong_Format.py
+python3 pandas_Cleaning_Fixing_Wrong_Data.py
 """
 
 import pandas as pd
@@ -10,15 +10,31 @@ print("************************************")
 
 df = pd.read_csv('data4.csv')
 
-df['Date'] = pd.to_datetime(df['Date'])
+df.loc[7, 'Duration'] = 45
 
 print(df.to_string())
 
-print("---------------------------------------------------")
-
-
 
 print("---------------------------------------------------")
+
+df = pd.read_csv('data4.csv')
+
+for x in df.index:
+  if df.loc[x, "Duration"] > 120:
+    df.loc[x, "Duration"] = 120
+
+print(df.to_string())
+
+
+print("---------------------------------------------------")
+
+df = pd.read_csv('data4.csv')
+
+for x in df.index:
+  if df.loc[x, "Duration"] > 120:
+    df.loc[x, "Duration"] = 120
+
+print(df.to_string())
 
 """
 x = ["apple", "banana", "cherry"] 	list 	

@@ -1,6 +1,6 @@
 #   python3 pandas_Read_CSV.py
 """
-python3 pandas_Cleaning_Cleaning_Data_of_Wrong_Format.py
+python3 pandas_Cleaning_Cleaning_Empty_Cells.py
 """
 
 import pandas as pd
@@ -14,9 +14,12 @@ df['Date'] = pd.to_datetime(df['Date'])
 
 print(df.to_string())
 
+
 print("---------------------------------------------------")
 
+df.dropna(subset=['Date'], inplace = True)
 
+print(df.to_string())
 
 print("---------------------------------------------------")
 

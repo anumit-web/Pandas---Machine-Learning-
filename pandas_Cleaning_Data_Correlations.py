@@ -1,6 +1,6 @@
 #   python3 pandas_Read_CSV.py
 """
-python3 pandas_Cleaning_Cleaning_Data_of_Wrong_Format.py
+python3 pandas_Cleaning_Data_Correlations.py
 """
 
 import pandas as pd
@@ -8,17 +8,22 @@ import pandas as pd
 print("Panda Series")
 print("************************************")
 
-df = pd.read_csv('data4.csv')
+df = pd.read_csv('data5.csv')
 
-df['Date'] = pd.to_datetime(df['Date'])
+df.corr()
 
-print(df.to_string())
-
-print("---------------------------------------------------")
+print(df.corr()) 
 
 
 
 print("---------------------------------------------------")
+
+
+
+
+print("---------------------------------------------------")
+
+
 
 """
 x = ["apple", "banana", "cherry"] 	list 	

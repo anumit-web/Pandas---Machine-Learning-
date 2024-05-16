@@ -1,24 +1,38 @@
 #   python3 pandas_Read_CSV.py
 """
-python3 pandas_Cleaning_Cleaning_Data_of_Wrong_Format.py
+python3 pandas_Cleaning_Plotting.py
 """
 
 import pandas as pd
 
-print("Panda Series")
+import matplotlib.pyplot as plt
+
+
 print("************************************")
 
-df = pd.read_csv('data4.csv')
+df = pd.read_csv('data6.csv')
 
-df['Date'] = pd.to_datetime(df['Date'])
+df.plot()
 
-print(df.to_string())
-
-print("---------------------------------------------------")
-
+plt.show()
 
 
 print("---------------------------------------------------")
+
+df = pd.read_csv('data6.csv')
+
+df.plot(kind = 'scatter', x = 'Duration', y = 'Calories')
+
+plt.show()
+
+
+print("---------------------------------------------------")
+
+df = pd.read_csv('data6.csv')
+
+df.plot(kind = 'scatter', x = 'Duration', y = 'Maxpulse')
+
+plt.show() 
 
 """
 x = ["apple", "banana", "cherry"] 	list 	
